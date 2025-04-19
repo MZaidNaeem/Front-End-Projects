@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: grid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 50%;
+            height: 50%;
+            background-color: whitesmoke;
+
+        }
+
+        .box {
+            width: 25%;
+            height: 25%;
+            background-color: orange;
+            animation: mover 4s ease-in 0s infinite forwards;
+        }
+
+        @keyframes mover {
+            0% {
+                transform: translateX(0%) translateY(0%);
+                background-color: orange;
+
+            }
+
+            25% {
+                transform: translateY(0%) translateX(300%);
+            }
+
+            50% {
+                transform: translateX(300%) translateY(300%);
+                background-color: red;
+            }
+
+            75% {
+                transform: translateX(0%) translateY(300%);
+            }
+
+            100% {
+                transform: translateX(0%) translateY(0%);
+                background-color: blue;
+
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

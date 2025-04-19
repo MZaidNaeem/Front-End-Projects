@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>backface-visibility</title>
+        <style>
+            body{
+                height: 98vh;
+                display: grid;
+                place-items: center;
+            }
+            .box1{
+                width: 800px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                
+
+            }
+            #box{
+                width: 200px;
+                height: 200px;
+                perspective: 1000px;
+
+            }
+        .box{
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            position: relative;
+            transition: all 0.5s;
+            flex-shrink: 0;
+            
+        }
+        #box:hover>.box{
+            transform: rotateY(180deg);
+        }
+        .front,.back{
+            width: 100%;
+            height: 100%;
+            font-size: 40px;
+            display: grid;
+            place-items: center;
+            background-color: rgb(109, 109, 109);
+            position: absolute;
+            backface-visibility: hidden;
+            color: white;
+        }
+        .back{
+            background-color: blue;
+            transform: rotateY(180deg);
+        }
+
+    </style>
+    </head>
+    <body>
+        <div class="box1">
+
+            <!--
+            <div id="box">
+                <div class="box">
+                    <div class="front">
+                        Front Side2
+                    </div>
+                    <div class="back">
+                        Back Side2
+                    </div>
+                </div>
+            </div>
+            <div id="box">
+                <div class="box">
+                    <div class="front">
+                        Front Side2
+                    </div>
+                    <div class="back">
+                        Back Side2
+                    </div>
+                </div>
+            </div>
+            <div id="box">
+                <div class="box">
+                    <div class="front">
+                        Front Side2
+                    </div>
+                    <div class="back">
+                        Back Side2
+                    </div>
+                </div>
+            </div>
+            <div id="box">
+                <div class="box">
+                    <div class="front">
+                        Front Side2
+                    </div>
+                    <div class="back">
+                        Back Side2
+                    </div>
+                </div>
+            </div>
+            <div id="box">
+                <div class="box">
+                    <div class="front">
+                        Front Side2
+                    </div>
+                    <div class="back">
+                        Back Side2
+                    </div>
+                </div>
+            </div>
+            <div id="box">
+                <div class="box">
+                    <div class="front">
+                        Front Side2
+                    </div>
+                    <div class="back">
+                        Back Side2
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+        <script>
+        let outer=document.querySelector(".box1");
+           function creator(){
+            for(let i=0;i<3;i++){
+            let middle=document.createElement("div");
+            middle.id="box";
+            let inner=document.createElement("div");
+            inner.classList.add("box");
+            let front=document.createElement('div');
+            front.classList.add("front");
+            front.innerText=`box ${i+1}`;
+            let back=document.createElement('div');
+            back.classList.add("back");
+            back.innerText=`box ${i+1}`;
+            inner.append(front);
+            inner.append(back);
+            middle.append(inner);
+            outer.append(middle);
+            }
+            for(let i=0;i<3;i++){
+            let middle=document.createElement("div");
+            middle.id="box";
+            let inner=document.createElement("div");
+            inner.classList.add("box");
+            let front=document.createElement('div');
+            front.classList.add("front");
+            front.innerText=`box ${i+1}`;
+            let back=document.createElement('div');
+            back.classList.add("back");
+            back.innerText=`box ${i+1}`;
+            inner.append(front);
+            inner.append(back);
+            middle.append(inner);
+            outer.append(middle);
+            }
+           }
+           creator();
+            outer.addEventListener("click",(event)=>{
+                     console.log(event.target.closest('.box'));
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.hero_img {
+    width: 80%;
+    margin: auto;
+    height: 20em;
+    background-image: url(assets/hero_image.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.section_2 {
+    margin: auto;
+
+}
+
+.section_2 .row_1 {
+    margin-bottom: 1em;
+    margin-top: 3em;
+}
+
+.images_grid {
+    width: 70%;
+    height: 100vh;
+    margin: auto;
+    margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-gap: 10px;
+
+}
+
+.img1 {
+    grid-column: 1/ span 6;
+    grid-row: 1/span 9;
+    background-image: url(assets/grid_image1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img2 {
+    grid-column: 7/ span 3;
+    grid-row: 1/span 9;
+    background-image: url(assets/grid_image2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img3 {
+    grid-column: 10/ span 3;
+    grid-row: 1/span 3;
+    background-image: url(assets/grid_image3.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.img4 {
+    grid-column: 1/ span 3;
+    grid-row: 10/span 3;
+    background-image: url(assets/grid_image4.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.img5 {
+    grid-column: 4/ span 3;
+    grid-row: 10/span 3;
+    background-image: url(assets/grid_image5.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.img6 {
+    grid-column: 7/ span 3;
+    grid-row: 10/span 3;
+    background-image: url(assets/grid_image6.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.img7 {
+    grid-column: 10/ span 3;
+    grid-row: 4/span 9;
+    background-image: url(assets/grid_image7.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.footer {
+    margin-top: 100px;
+    padding: 30px;
+}
+
+.footer .data {
+    margin-top: 50px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: Black;
+}
+
+.footer ul li a:hover {
+    text-decoration: underline;
+
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background:linear-gradient(to right,blue,red);
+        }
+        .container{
+            width: 750px;                  
+            height: 50vh;         
+            display: grid;
+            place-items: center;
+            margin: 0px 22px;
+            
+        }
+        .timer{
+            width: 100%;
+            height: 50%;
+            background-color: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid inherit;
+            border-top: 5px solid red;
+            border-bottom: 5px solid red;
+            border-radius: 20px;
+            font-size: 6rem;
+
+        }
+        .inn{
+            width: 30%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            
+            
+        }
+        @media (max-width:720px) {
+            .timer{
+                font-size: 3remw;
+            }
+            
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="timer">
+                <div class="hours inn">5</div>:
+                <div class="mins inn">6</div>:
+                <div class="seconds inn">4</div>
+
+            </div>
+        </div>
+        <script>
+            let content=document.querySelector(".timer").children;
+            let hours=content[0];
+            let mins=content[1];
+            let seconds=content[2];
+            console.log(content,hours,mins,seconds)
+            function timer(){
+                 let currrenttime=new Date();
+                 hours.innerText=currrenttime.getHours();
+                 mins.innerText=currrenttime.getMinutes();
+                 seconds.innerText=currrenttime.getSeconds();
+            }
+            timer();
+            setInterval(timer,1000);
+
+        </script>
+    </body>
+</html>

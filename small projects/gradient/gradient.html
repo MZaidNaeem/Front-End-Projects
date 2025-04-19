@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gradient website</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+        .section{
+            margin: auto;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            
+        }
+        .content{
+            width:80%;
+            min-height: 40%;
+            margin: auto;
+
+        }
+        .file{
+            margin: 10px 2rem;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+        button{
+            margin-top: 10px;
+            width: 10rem;
+            padding: 1rem;
+            border: 1px solid black;
+            display: inline-block;
+            color: white;
+            background-color:inherit ;
+        }
+
+
+        .file1 {
+            width: 100%; 
+            margin: auto;
+            text-align: center; 
+            color: white;
+
+        }
+        .code{
+            width: 45%;
+            margin: auto;
+            margin-top: 2rem;
+            min-height:10rem ;
+            text-align: center;
+            padding-top: 25px;
+            /*background-color: rgb(62, 61, 61);*/
+            background-color: inherit;
+
+            border-left: 4px solid white;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <div class="section">
+            <div class="content">
+                <div class="file">
+                    <button class="one">ist </button>
+                    <button class="two">second </button>
+                </div>
+                <div class="file1">
+                    <p> <u> Made By M.Zaid Naeem </u></p>
+                    <p style="margin-top: 10px;"> click below to copy text</p>
+                    <div class="code">
+                        <p class="para"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="gradient.js"></script>
+
+    </body>
+</html>

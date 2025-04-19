@@ -1,0 +1,78 @@
+.header{
+    color: white;
+    background-color:#e74c3c;
+}
+#logo{
+    font-size: 2rem;
+    margin-top: 5px;
+}
+a:hover{
+    text-decoration: none;
+}
+.section{
+    padding-top: 70px ;
+    padding-bottom:70px ;
+
+}
+.section h2.section-head{
+    color: black;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.section h2.section-head:after{
+    background: #e74c3c;
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    margin: 20px auto;
+
+
+}
+#menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+#menu li{
+    display: inline-block;
+}
+#menu li a{
+    color: white;
+    padding: 15px 10px ;
+    display: block;
+    text-decoration: none;
+}
+#menu li a:hover{
+background-color: #c0392b;
+}
+#banner{
+    background-image: url(img/1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner-title h1{
+    background: rgba(255,255,255,0.8);
+    display: inline-block;
+    padding: 10px;
+    margin: 0;
+
+}
+.banner-title{
+    padding: 5px;
+}
+.banner-title p.lead{
+    color: white;
+    background-color: rgba(231,76,60,0.7);
+    padding: 10px;
+}
+.service-box{
+    text-align: center;
+}
+.service-box i.fa{
+    color:#e74c3c ;
+    font-size: 70px;
+    margin-bottom:15px;
+}
+

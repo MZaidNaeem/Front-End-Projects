@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootstrap </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    </head>
+
+<body>
+    <div class="container mt-3" style="border: 2px solid cyan;">
+        <h2 class="text-center py-3"> Bootstrap 5</h2>
+        <div class="row py-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Name">Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="Name">Email:</label>
+                    <input type="email" readonly="" class="form-control" placeholder="@gmai.com">
+                </div>
+                <div class="form-group">
+                    <label for="Name">Password:</label>
+                    <input type="password" class="form-control">
+                    <small class="form-text text-muted">
+                        Your Password must be 8 to 20 characrter
+                    </small>
+                </div>
+                <div class=" form-group">
+                    <label for="country"> Country</label>
+                    <select name="" id="" class="form-control">
+                        <option value="">India</option>
+                        <option value="">Pakistan</option>
+                        <option value="">Japan</option>
+                        <option value="">Bangladesh</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="Message">Message</label>
+                    <textarea name="" id="" class="form-control form-control-lg"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+
+                    <input type="file" class="form-control-file">
+                </div>
+                <div class="form-group">
+                    <label for="Amount">Amount</label>
+                    <input type="range" class="form-control-range">
+                </div>
+                <div class="form-group">
+                    <label for="">Hobbies</label>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="pianocheck">
+                        <label for="pianocheck" class="form-check-label">Piano</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="bookcheck">
+                        <label for="bookcheck" class="form-check-label">book</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="musiccheck" disabled="">
+                        <label for="musiccheck" class="form-check-label">music</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Gender</label>
+
+                    <div class="form-check">
+                        <input type="radio" name="radio" class="form-check-input" id="male">
+                        <label for="male" class="form-check-label">male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="radio" class="form-check-input" id="female">
+                        <label for="female" class="form-check-label">female</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

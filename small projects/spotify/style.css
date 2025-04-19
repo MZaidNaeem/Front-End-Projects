@@ -1,0 +1,280 @@
+.main {
+    display: flex;
+    height: 100vh;
+    padding: 0.25rem;
+
+}
+
+.sidebar {
+    background-color: black;
+    width: 300px;
+    border-radius: 1rem;
+    margin-right: 0.2rem;
+}
+
+.nav {
+    background-color: rgb(44, 44, 44);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; */
+    height: 100px;
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem;
+
+
+}
+
+.nav-option a {
+
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.nav-option {
+    line-height: 2.5rem;
+    opacity: 0.7;
+    transition: all 1s ease 0s;
+}
+
+.nav-option:hover {
+    opacity: 1;
+}
+
+.nav-option i {
+    font-size: 1.25rem;
+}
+
+.library {
+    background-color: rgb(44, 44, 44);
+    border-radius: 1rem;
+    /* display: flex; */
+    height: 100%;
+    margin: 0.6rem;
+    padding: 0.5rem 0.75rem;
+
+}
+
+.library img {
+    height: 1.25rem;
+    width: 1.25rem;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.icons i {
+    font-size: 1.25rem;
+    opacity: 0.7;
+}
+
+.icons i:hover {
+    opacity: 1;
+}
+
+.main-content {
+    background-color: rgb(23, 23, 23);
+    flex: 1;
+    border-radius: 1rem;
+    overflow: auto;
+    padding: 0 1.5rem 0 1.5rem;
+    height: 87%;
+}
+
+.music-player {
+    background-color: black;
+    height: 72px;
+}
+
+.box {
+    background-color: rgb(23, 23, 23);
+    /* background-color: white; */
+    height: 8rem;
+    border-radius: 0.75rem;
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 1rem 1.25rem;
+
+}
+
+.box-p1 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.box-p2 {
+    font-size: 0.75rem;
+}
+
+
+.sticky_nav {
+    height: 30px;
+    position: sticky;
+    background-color: rgb(23, 23, 23);
+    line-height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0 1rem 0;
+
+}
+
+.nav-left {
+    margin-left: 0.75rem;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.nav-right button {
+    margin-right: 1rem;
+    border: none;
+}
+
+@media (max-width:1000px) {
+    .hide {
+        display: none;
+    }
+}
+
+
+.card {
+    background-color: rgb(44, 44, 44);
+    width: 150px;
+    border-radius: 0.5rem;
+    padding: 4px;
+    margin-left: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-heading {
+    font-weight: 600px;
+}
+
+.card-information {
+    font-size: 0.75rem;
+    opacity: 0.5;
+
+}
+
+.footer {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.line {
+    width: 90%;
+    height: 30%;
+    border-top: 2px solid white;
+    opacity: 0.3;
+}
+
+.album {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+
+.album img {
+
+    width: 2rem;
+
+}
+
+.album p a {
+    text-decoration: none;
+    color: white;
+}
+
+.album p a:hover {
+    text-decoration: underline;
+}
+
+.player {
+    width: 45%;
+    /* background-color: yellow; */
+
+}
+
+.player .player-control {
+    display: flex;
+    justify-content: center;
+}
+
+.player .player-control img {
+    height: 1rem;
+    margin: 1rem 1rem 0 1rem;
+
+
+}
+
+.bar {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+
+}
+
+.bar span {
+    font-size: .7rem;
+}
+
+.bar input[type="range"] {
+    width: 300px;
+    cursor: pointer;
+    background-color: transparent;
+    appearance: none;
+}
+
+.range::-webkit-slider-runnable-track {
+    height: .2rem;
+    border-radius: 100px;
+    background-color: #ddd;
+
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #1bd760;
+    margin-top: -6px;
+}
+
+
+
+
+
+.control {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

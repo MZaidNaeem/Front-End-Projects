@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Lexend+Deca:wght@100;200;300;400;500;600;700&family=Montserrat:wght@400;700&family=Mulish:wght@300&family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lexend Deca', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background: linear-gradient(
+                    45deg,
+                    hsl(236, 100%, 80%, 0.2),
+                    rgba(205, 155, 225, 0.1)
+            );
+
+
+        }
+
+        img {
+            font-family: 'Lexend Deca', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 4.8rem;
+        }
+
+        p {
+            font-size: 1.7rem;
+        }
+
+        label {
+            margin-top: 1rem;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        textarea {
+            padding: .2rem .5rem;
+        }
+
+        textarea:hover {
+            cursor: copy;
+        }
+
+        .parent {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2.4rem;
+        }
+
+        /*------ Style 1 ------*/
+        .style1 {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 5rem;
+            height: 5rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+        }
+
+        .style1::-webkit-color-swatch {
+            border-radius: .5rem;
+            border: none;
+        }
+
+        .style1::-moz-color-swatch {
+            border-radius: .5rem;
+            border: none;
+        }
+
+    </style>
+    </head>
+    <body>
+        <section>
+            <h1>Placeholder Image path Generator</h1>
+            <div>
+                <label for="selectImage">Image Size:</label>
+                <select id="selectImage">
+                    <option value="150x50">Small (100x50)</option>
+                    <option value="200x200">Medium Square (200x200)</option>
+                    <option value="350x150">Medium (350x150)</option>
+                    <option value="400x400">Large Square (400x400)</option>
+                    <option value="650x350">Large (650x350)</option>
+                    <option value="800x600">X-Large (800x600)</option>
+                    <option value="1920x1080">Full HD (1920x1080)</option>
+                </select>
+            </div>
+
+            <div class="parent">
+                <label for="nameOnImage">Text on Image: </label>
+                <input type="text" name id="nameOnImage">
+            </div>
+
+            <div class="parent">
+                <label for="backgroundColor">Color of Background: </label>
+                <input type="color" value="#98bc62" class="style1"
+                    name id="backgroundColor">
+            </div>
+
+            <div class="parent">
+                <label for="textColor">Color of Text: </label>
+                <input type="color" class="style1" value="#2C5F2D" name
+                    id="textColor">
+            </div>
+
+            <div class="container">
+                <img>
+                <br>
+                <label for="urlPath"></label>
+                <textarea name id="urlPath" cols="20"
+                    rows="2">Link will be available her</textarea>
+            </div>
+        </section>
+
+        <script>
+
+    const select = document.querySelector('select')
+    const inputAll = document.querySelectorAll('input')
+    let myImg = document.querySelector("img");
+    let textArea = document.querySelector("textarea");
+
+    console.log(inputAll);
+
+    let urlObj = {}; 
+
+    const removeHashTag = (str) => {
+        return str.replace("#","")
+    }
+
+    const addPlus = (str) => {
+        return str.split(" ").join("+");
+    }
+
+    const createImagePath = () => {
+
+        urlObj.size = select.value;
+        urlObj.text = addPlus(inputAll[0].value);
+        urlObj.bgClr = removeHashTag(inputAll[1].value);
+        urlObj.txtClr = removeHashTag(inputAll[2].value);
+
+        // #subscribe to thapa technical
+
+
+        let urlPath = `http://via.placeholder.com/${urlObj.size}/${urlObj.bgClr}/${urlObj.txtClr}?text=${urlObj.text}`
+
+        myImg.src = urlPath;
+        textArea.value = urlPath;
+
+        textArea.focus();
+        textArea.select();
+
+        // Copy the selected text to the clipboard
+        navigator.clipboard.writeText(textArea.value)
+            .then(() => {
+                console.log('Text copied to clipboard');
+            })
+            .catch(err => {
+                console.error('Error copying text: ', err);
+            });
+
+
+    }
+
+    inputAll.forEach((curElem) => curElem.addEventListener('change', createImagePath));
+
+    select.addEventListener('change', createImagePath)
+
+</script>
+    </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        .container {
+            width: 500px;
+            background-color: yellow;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .box_container {
+            width: 100px;
+            height: 100px;
+            perspective: 1000px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform-style: preserve-3d; 
+            transition: transform 0.6s; 
+        }
+        .shuffle,.maintain {
+            transform: rotateY(180deg); 
+        }
+        .maintain > .back{
+          background-color: greenyellow;
+          color: black;
+
+        }
+        .front, .back {
+            width: 100px;
+            height: 100px;
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+            color: white;
+        }
+        .front {
+            background-color: gray;
+        }
+        .back {
+            transform: rotateY(180deg); 
+          background-color: red;
+
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+    </div>
+    <script>
+      let arr=[];
+      function divmaker(num) {
+        // Create box_container element and add the correct class
+        let box_container = document.createElement("div");
+        box_container.classList.add("box_container");
+    
+        // Create box element and add the correct class
+        let box = document.createElement("div");
+        box.classList.add("box");
+         
+        // Create front and back div elements with respective classes
+        let front = document.createElement("div");
+        front.classList.add("front");
+    
+        let back = document.createElement("div");
+        back.classList.add("back");
+        back.innerText=`${num}`;
+    
+        // Append front and back to the box
+        box.append(front);
+        box.append(back);
+    
+        // Append box to the box_container
+        box_container.append(box);
+    
+        // Append box_container to the container
+        let parent = document.querySelector(".container");
+        parent.append(box_container);
+    }
+    
+    // Call the function to create and add the elements
+    function starter(){
+      let arr=[1,2,3,4,1,2,3,4];
+      for (let i = arr.length - 1; i >= 0; i--) {
+        let rand = Math.floor(Math.random() * 8);
+        [arr[i], arr[rand]] = [arr[rand], arr[i]];
+      }
+      arr.forEach((value)=>{
+      divmaker(value);
+     })
+    }
+
+    function rotator(){
+      let box_container=document.querySelectorAll('.box_container');
+      
+      box_container.forEach((value)=>{
+               value.addEventListener("click",()=>{
+                if( !(value.children[0].classList.contains("maintain"))){
+                value.children[0].classList.add("shuffle");
+                arr.push(value.children[0].innerText);
+                setTimeout(()=>{
+                  checker();
+                },500)
+                }
+               })
+      })
+  }
+  function checker(){
+    if((arr[0]!=arr[1]) && (arr.length==2)){
+        let remover=document.querySelectorAll('.shuffle');
+        remover.forEach((value)=>{
+          value.classList.remove("shuffle");
+          arr=[]
+        })
+    }
+    else if((arr[0]==arr[1]) && (arr.length==2)){
+      let adder=document.querySelectorAll('.shuffle');
+      adder.forEach((value)=>{
+        value.classList.add("maintain");
+        value.classList.remove("shuffle")
+        arr=[];
+      })
+
+    }
+  }
+
+
+    function game(){
+       starter();
+       rotator();
+    }
+    game();
+
+    
+    </script>
+  </body>
+</html>
